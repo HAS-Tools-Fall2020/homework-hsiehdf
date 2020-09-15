@@ -6,6 +6,14 @@ HAS Tools
 9/13/2020
 - - -
 
+---------
+# Grade
+
+3/3 - Nice Job! I really like your table.
+
+
+---
+
 ## Summary of How I Made My Forecasts
 
 I looked at previous years of September daily flow rates and mentally noted the lowest flow rates recorded. I then used those low rates to make my predictions. I think we will be getting below average rainfall from climate change.

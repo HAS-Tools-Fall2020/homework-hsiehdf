@@ -10,4 +10,4 @@ I won the previous weeks prediction, therefore, I'm skipping my markdown for thi
 
 :tada::tada:
 
-![image](C:\Users\dnahh\Desktop)
+![Screenshot 2020-09-21 074045.png](C:\Users\dnahh\Desktop)

@@ -39,50 +39,6 @@ flow_data = data[['year', 'month','day', 'flow']].to_numpy()
 del(data)
 
 # %%
-# Starter Code
-# Count the number of values with flow > 600 and month ==7
-flow_count = np.sum((flow_data[:,3] > 600) & (flow_data[:,1]==7))
-
-# this gives a list of T/F where the criteria are met
-(flow_data[:,3] > 600) & (flow_data[:,1]==7)
-
-# this give the flow values where that criteria is met
-flow_pick = flow_data[(flow_data[:,3] > 600) & (flow_data[:,1]==7), 3]
-
-# this give the year values where that criteria is met
-year_pic = flow_data[(flow_data[:,3] > 600) & (flow_data[:,1]==7), 0]
-
-# this give the all rows  where that criteria is met
-all_pic = flow_data[(flow_data[:,3] > 600) & (flow_data[:,1]==7), ]
-
-# Calculate the average flow for these same criteria 
-flow_mean = np.mean(flow_data[(flow_data[:,3] > 600) & (flow_data[:,1]==7),3])
-
-print("Flow meets this critera", flow_count, " times")
-print('And has an average value of', flow_mean, "when this is true")
-
-# Make a histogram of data
-# Use the linspace  funciton to create a set  of evenly spaced bins
-mybins = np.linspace(0, 1000, num=15)
-# another example using the max flow to set the upper limit for the bins
-#mybins = np.linspace(0, np.max(flow_data[:,3]), num=15) 
-#Plotting the histogram
-plt.hist(flow_data[:,3], bins = mybins)
-plt.title('Streamflow')
-plt.xlabel('Flow [cfs]')
-plt.ylabel('Count')
-
-# Get the quantiles of flow
-# Two different approaches ---  you should get the same answer
-# just using the flow column
-flow_quants1 = np.quantile(flow_data[:,3], q=[0,0.1, 0.5, 0.9])
-print('Method one flow quantiles:', flow_quants1)
-# Or computing on a colum by column basis 
-flow_quants2 = np.quantile(flow_data, q=[0,0.1, 0.5, 0.9], axis=0)
-# and then just printing out the values for the flow column
-print('Method two flow quantiles:', flow_quants2[:,3])
-
-# %%
 # Question 2
 print ("Flow_data is an array composed of 11,584 rows and 4 columns of data.\
         The columns are year, month, day, and flow.")

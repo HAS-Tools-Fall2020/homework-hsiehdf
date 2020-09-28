@@ -84,6 +84,7 @@ Looking at the month of September I see that the mean is 172.68, but in October 
 |63400|1993|1|8|
 |    158 |   2003 |       1 |    31 |
 |  61000 |    1993 |       2 |    20 |
+|136| 1991 | 2 | 23|
 |  30500 |    1995 |       3 |     6 |
 |     97 |   1989 |       3 |    25 |
 |   4690 |   1991 |       4 |     2 |

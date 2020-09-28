@@ -22,3 +22,5 @@ Below are all my attempts to add in a random picture. All failed. I know the pat
 ![518 pic](file:///C:/Users/dnahh/Desktop/HAS_Tools_dir/homework-hsiehdf-git/Training_Workspace/Screenshot 2020-09-21 074045.png)
 
 ![518 pic](assets/Screenshot 2020-09-21 074045.png)
+
+![](assets/Image-ef194e6e.jpg)

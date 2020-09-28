@@ -34,7 +34,7 @@ data['day'] = data['day'].astype(int)
 
 # Make a numpy array of this data
 flow_data = data[['year', 'month','day', 'flow']].to_numpy()
-
+ 
 # Getting rid of the pandas dataframe since we wont be using it this week
 del(data)
 

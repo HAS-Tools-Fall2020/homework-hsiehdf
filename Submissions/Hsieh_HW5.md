@@ -8,7 +8,7 @@ HAS Tools
 
 ## Summary of How I Made My Forecasts
 
-Looking at the month of September I see that the mean is 172.68, but in October the mean is 146.16. Therefore historically I know that flow decreases in October, and I am picking low flow numbers again, especially given the drought. :(
+Using Python I calculated the historical mean flow of September was 172.68 cfs and the mean flow in October was 146.16. Therefore, I know that flow decreases in October. I also looked at the mean flows for the past two weeks and used those means as a starting point for my predictions and made my second week predictions slightly lower than my first.
 
 ## Assignment Questions
 *1. Provide a summary of the data frames properties.*

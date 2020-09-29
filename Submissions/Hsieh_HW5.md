@@ -6,6 +6,10 @@ HAS Tools
 9/27/2020
 - - -
 
+## Grade
+3/3 - Great work!
+___
+
 ## Summary of How I Made My Forecasts
 
 Using Python I calculated the historical mean flow of September was 172.68 cfs and the mean flow in October was 146.16. Therefore, I know that flow decreases in October. I also looked at the mean flows for the past two weeks and used those means as a starting point for my predictions and made my second week predictions slightly lower than my first.

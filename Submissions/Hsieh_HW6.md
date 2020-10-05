@@ -10,7 +10,7 @@ HAS Tools
 
 I did **not** use my model I built to make my prediction, as it gave me a prediction of 160 cfs... something tells me that that isn't right (though can't hurt to dream!).
 
-Instead, I stuck with what I did last week- I calculated the historical mean flow in September (172.68 cfs) and the historical mean flow in October (146.16 cfs) and compared the two. I see that flow decreases in October so I used that to make predictions lower than September. I also looked at the mean flows for the past two weeks and used those means as a starting point for my predictions and made my second week predictions slightly lower than my first.
+Instead, I stuck with what I did last week- I calculated the historical mean flow in September (172.68 cfs) and the historical mean flow in October (146.16 cfs) and compared the two. I see that flow decreases in October so I used that to make predictions lower than September. I also looked at the mean flows for the past two weeks and used those means as a starting point for my predictions and made my second week predictions slightly lower than my first. I settled on 56.8 and 56 cfs, because we're in October and I think it'll be less than the 57 cfs averages we've been getting. 
 
 
 ## Assignment Questions
@@ -28,7 +28,7 @@ intercept: 122.62
   0.03  0.03  0.01  0.01 -0.01 -0.02 -0.    0.  ]
 
 
-(3) I built an AR model using data from January 1st 1989 to present time. Originally I tried to do just over 3 years of data (2017 to present) and only from September to October but got a r2 of 0.15. Then I tried to do the whole data set with only the last 10 years of data (2010 onwards) but also got an r2 value of 0.10. So I decided to use the entire dataset and add more steps into the model (I did 20 steps). This increased my r2 to a whopping 0.40 and I concluded this was the best of the three tries so I would stick with it.
+(3) I built an AR model using data from January 1st 1989 to present time. Originally I tried to do just over 3 years of data (2017 to present) and only from September to October but got an r2 of 0.15. Then I tried to do the whole data set with only the last 10 years of data (2010 onwards) but got an r2 value of 0.10. So I decided to use the entire dataset and add more steps into the model (I did 20 steps). This increased my r2 to a whopping 0.40 and I concluded this was the best of the three tries so I would stick with it.
 
 For my final model my training periods were rows 21-1200 (From May 28, 1989 to January 1, 2012), and my testing periods were rows 1200-finish (from January 8, 2012 to present).
 

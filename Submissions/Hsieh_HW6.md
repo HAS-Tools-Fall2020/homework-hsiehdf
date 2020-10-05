@@ -1,4 +1,4 @@
-# Assignment 5
+# Assignment 6
 Diana Hsieh
 
 HAS Tools
@@ -8,7 +8,7 @@ HAS Tools
 
 ## Summary of How I Made My Forecasts
 
-I did **not** use my model I built to make my prediction, as it gave me a prediction of 160 cfs... something tells me that that isn't right.
+I did **not** use my model I built to make my prediction, as it gave me a prediction of 160 cfs... something tells me that that isn't right (though can't hurt to dream!).
 
 Instead, I stuck with what I did last week- I calculated the historical mean flow in September (172.68 cfs) and the historical mean flow in October (146.16 cfs) and compared the two. I see that flow decreases in October so I used that to make predictions lower than September. I also looked at the mean flows for the past two weeks and used those means as a starting point for my predictions and made my second week predictions slightly lower than my first.
 
@@ -21,8 +21,10 @@ Instead, I stuck with what I did last week- I calculated the historical mean flo
 (2) This was the final output of my equation. The full equation is in my python script.
 
 coefficient of determination: 0.4
+
 intercept: 122.62
-slope: [ 0.43  0.1  -0.    0.13  0.1   0.19 -0.12 -0.09 -0.02 -0.05 -0.03 -0.
+
+  slope: [ 0.43  0.1  -0.    0.13  0.1   0.19 -0.12 -0.09 -0.02 -0.05 -0.03 -0.
   0.03  0.03  0.01  0.01 -0.01 -0.02 -0.    0.  ]
 
 
@@ -30,17 +32,30 @@ slope: [ 0.43  0.1  -0.    0.13  0.1   0.19 -0.12 -0.09 -0.02 -0.05 -0.03 -0.
 
 For my final model my training periods were rows 21-1200 (From May 28, 1989 to January 1, 2012), and my testing periods were rows 1200-finish (from January 8, 2012 to present).
 
-![](assets/Range of Training and Test Flow.png)
+![](assets/Hsieh_HW6-bdec988d.png)
+
+Here is a graph of the x axis limited showing a half and half split of training and testing data.
+
+![](assets/Hsieh_HW6-44750757.png)
 
 *2. Provide an analysis of your final model performance. This should include at least one graph that shows the historical vs predicted streamflow and some discussion of qualitatively how you think your model is good or bad.*
 
 There is definitely something off with my model. My model has slopes that are negative, which gives this graph, clearly incorrect.
 
-![](assets/Predicted vs Observed Flow.png)
+![](assets/Hsieh_HW6-c8b4ed08.png)
+
 
 I tried three different data sets to increase my r2. Two of the methods failed pretty impressively and the one I stuck with is just slightly better than your models r2 (more discussion above in question 1 part 3).
 
 If I were to really try to make a model to predict flow, I wouldn't pick linear regression. I believe that is why my r2 is so poor, because flow throughout the year is not linear, but has seasonality with ebbs and flow.
+
+(note: I'm not sure why none of my images would display without my having to drag them from my GUI to this markdown file. I used this for the three images and all were in the assets folders with those names.
+
+![](assets/Range of Training and Test Flow.png)
+
+![](assets/Limited X Axis Flow Values.png)
+
+![](assets/Predicted vs Observed Flow.png) )
 
 *3. Finally, provide discussion on what you actually used for your forecast. Did you use your AR model, why or why not? If not how did you generate your forecast this week?*
 

@@ -5,12 +5,15 @@ HAS Tools
 
 10/5/2020
 - - -
+### Grade
+3/3 - Nice work! It does seem like there is something weird happening with your model maybe we can get to the bottom of it with the code review this week. 
+___
 
 ## Summary of How I Made My Forecasts
 
 I did **not** use my model I built to make my prediction, as it gave me a prediction of 160 cfs... something tells me that that isn't right (though can't hurt to dream!).
 
-Instead, I stuck with what I did last week- I calculated the historical mean flow in September (172.68 cfs) and the historical mean flow in October (146.16 cfs) and compared the two. I see that flow decreases in October so I used that to make predictions lower than September. I also looked at the mean flows for the past two weeks and used those means as a starting point for my predictions and made my second week predictions slightly lower than my first. I settled on 56.8 and 56 cfs, because we're in October and I think it'll be less than the 57 cfs averages we've been getting. 
+Instead, I stuck with what I did last week- I calculated the historical mean flow in September (172.68 cfs) and the historical mean flow in October (146.16 cfs) and compared the two. I see that flow decreases in October so I used that to make predictions lower than September. I also looked at the mean flows for the past two weeks and used those means as a starting point for my predictions and made my second week predictions slightly lower than my first. I settled on 56.8 and 56 cfs, because we're in October and I think it'll be less than the 57 cfs averages we've been getting.
 
 
 ## Assignment Questions

@@ -11,9 +11,8 @@ Welcome Gillian! Please make yourself at home.
 
 ## Steps to Run my code
 
-To review my code please download the latest streamflow data from the USGS website. Please name it "streamflow_week7" and make sure it is a txt file. You will need to make sure it is in a folder named "data" on your computer.
-
-Then (I hope) all you need to do to run my code is to hit "run me" in each section of code. You will see comments in the code on what I would like you to predict for me!
+I hope all you need to do to run my code is to hit "run me" in each section of code. You will see comments in the code on what I would like you to predict for me!
+The data has already been downloaded and placed into my repo with the following path: homework-hsiehdf-git --> Submissions --> Code_Review1 --> data
 
 Thanks!
 

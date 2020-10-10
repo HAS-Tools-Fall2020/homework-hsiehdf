@@ -2,9 +2,7 @@
 import os
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
-import datetime
 
 # %%
 # Here is my first function!
@@ -27,8 +25,8 @@ def get_mean(days_of_flow):
 # Set the file name and path to where you have stored the data
 
 
-filename = 'streamflow_week6.txt'
-filepath = os.path.join('../data', filename)
+filename = 'streamflow_week7.txt'
+filepath = os.path.join('data', filename)
 print(os.getcwd())
 print(filepath)
 
@@ -60,7 +58,7 @@ for k in range(1, 21):
 # I used the entire data set (1989 forward) and chose to use the first
 # 1200 weeks for my training set. I dropped the first twenty weeks since
 # they didn't have lagged data to go with them. My test set is composed
-# of the rows 1200 onward.
+# of rows 1200 onward.
 
 train = flow_weekly[21:1200][['flow', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,
                              13, 14, 15, 16, 17, 18, 19, 20]]
@@ -82,14 +80,8 @@ print('The coefficient of determination is:', np.round(r_sq, 2))
 print('The Y intercept is:', np.round(model.intercept_, 2))
 print('The slopes are:', np.round(model.coef_, 2))
 
-# generating preditions with the funciton
 
-q_pred_train = model.predict(train[[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
-                                    12, 13, 14, 15, 16, 17, 18, 19, 20]])
-q_pred_test = model.predict(test[[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
-                                  12, 13, 14, 15, 16, 17, 18, 19, 20]])
-
-# Prediction for week 1 using my model. I used a for loop that would make a
+# Prediction for week 1 using my AR model. I used a for loop that would make a
 # line with the equation y = m1x1 + m2x2 ... m20x20 + b
 
 this_week_pred = model.intercept_
@@ -100,9 +92,13 @@ for f in range(1, 21):
 print("this is the first week AR prediction:", this_week_pred[-1])
 
 # Prediction for week 2 using my model. This code is interesting, as I had to
-# use my weekly flow value I had predicted above and use it for my second
-# week prediction. I did this by first setting "next_week_pred" equal to my
-# model.intercept_ (which is b)
+# use my weekly flow value I predicted above and use it in my second
+# weeks prediction. I did this by first setting "next_week_pred" equal to my
+# model.intercept_, then added m1 (model.coef_[0]) times x1 (this_week_pred).
+# This gave me y= m1x1 + b. Then I only made the for loop go 1-20 (instead of
+# 1-21) because my first week was already acounted for. This gave me the
+# same equation as above y = m1x1 + m2x2 ... m20x20 + b using my newest
+# weekly flow and all other x values shifted by one week.
 
 next_week_pred = model.intercept_
 
@@ -112,54 +108,6 @@ for p in range(1, 20):
     next_week_pred = model.coef_[p] * test[p].tail(1) + next_week_pred
 
 print("this is the second week AR prediction:", next_week_pred[-1])
-
-# %%
-# Timeseries of observed flow values
-# Note that date is the index for the dataframe so it will
-# automatically treat this as our x axis unless we tell it otherwise
-
-
-# Training and range data
-fig, ax = plt.subplots()
-ax.plot(test['flow'], '-c', label='test')
-ax.plot(train['flow'], color='gold', linestyle='-', label='training')
-ax.set(title="Observed Flow", xlabel="Date", ylabel="Weekly Avg Flow [cfs]",
-       yscale='log')
-ax.grid(True)
-ax.legend()
-
-# Saving the figure
-fig.set_size_inches(5, 3)
-fig.savefig("Range of Training and Test Flow.png")
-
-# 2. Time series of flow values with the x axis range limited
-fig, ax = plt.subplots()
-ax.plot(test['flow'], '-c', label='test')
-ax.plot(train['flow'], color='gold', linestyle='-', label='training')
-ax.set(title="Limited X Axis Flow Values", xlabel="Date",
-       ylabel="Weekly Avg Flow [cfs]", yscale='log',
-       xlim=[datetime.date(2004, 1, 26), datetime.date(2020, 10, 4)])
-ax.grid(True)
-ax.legend()
-
-# Saving the figure
-fig.set_size_inches(5, 3)
-fig.savefig("Limited X Axis Flow Values.png")
-
-# 3. Line  plot comparison of predicted and observed flows
-fig, ax = plt.subplots()
-ax.plot(train['flow'], color='plum', linewidth=2, label='observed')
-ax.plot(train.index, q_pred_train, color='yellow', linestyle='-',
-        label='simulated')
-ax.set(title="Predicted vs. Observed Flow", xlabel="Date",
-       ylabel="Weekly Avg Flow [cfs]", yscale='log')
-ax.legend(loc='upper center', frameon=False)
-
-# Saving the figure
-fig.set_size_inches(5, 3)
-fig.savefig("Predicted vs Observed Flow.png")
-
-plt.show()
 
 # %%
 # Now after all that work with my model, let's ignore it.
@@ -174,3 +122,5 @@ print("my week 1 rounded prediction is", week1_pred_rounded)
 
 week2_pred = week1_pred_rounded - 1
 print("my week 2 rounded prediction is", week2_pred)
+
+# %%

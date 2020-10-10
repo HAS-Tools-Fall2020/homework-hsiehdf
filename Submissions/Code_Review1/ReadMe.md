@@ -12,7 +12,7 @@ Welcome Gillian! Please make yourself at home.
 ## Steps to Run my code
 
 I hope all you need to do to run my code is to hit "run me" in each section of code. You will see comments in the code on what I would like you to predict for me!
-The data has already been downloaded and placed into my repo with the following path: homework-hsiehdf-git --> Submissions --> Code_Review1 --> data
+The data (streamflow_week7) has already been downloaded and placed into my repo with the following path: homework-hsiehdf-git --> Submissions --> Code_Review1 --> data
 
 Thanks!
 

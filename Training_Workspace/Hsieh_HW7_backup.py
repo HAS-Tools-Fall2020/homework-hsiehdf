@@ -30,6 +30,7 @@ filepath = os.path.join('data', filename)
 print(os.getcwd())
 print(filepath)
 
+
 # %%
 # Read the data into a pandas dataframe
 
@@ -87,7 +88,8 @@ this_week_pred = model.intercept_
 
 for f in range(1, 21):
     this_week_pred = model.coef_[f-1] * test[f].tail(1) + this_week_pred
-print("this is the first week AR prediction:", np.int(this_week_pred.values))
+
+print("this is the first week AR prediction:", this_week_pred[-1])
 
 # Prediction for week 2 using my model. This code is interesting, as I had to
 # use my weekly flow value I predicted above and use it in my second
@@ -105,7 +107,7 @@ next_week_pred = this_week_pred * model.coef_[0] + next_week_pred
 for p in range(1, 20):
     next_week_pred = model.coef_[p] * test[p].tail(1) + next_week_pred
 
-print("this is the second week AR prediction:", np.int(next_week_pred))
+print("this is the second week AR prediction:", next_week_pred[-1])
 
 # %%
 # Now after all that work with my model, let's ignore it.

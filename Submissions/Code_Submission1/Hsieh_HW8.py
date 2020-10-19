@@ -25,7 +25,7 @@ def get_mean(days_of_flow):
 # Set the file name and path to where you have stored the data
 
 
-filename = 'streamflow_week7.txt'
+filename = 'streamflow_week8.txt'
 filepath = os.path.join('data', filename)
 print(os.getcwd())
 print(filepath)
@@ -117,6 +117,9 @@ print("this is the second week AR prediction:", np.int(next_week_pred))
 week1_pred = get_mean(14)
 week1_pred_rounded = int(week1_pred)
 print("my week 1 rounded prediction is", week1_pred_rounded)
+
+#I just assume week 2 will have a slightly lower mean than week one because of 
+# historical trends. This why my second week prediction has a -1. 
 
 week2_pred = week1_pred_rounded - 1
 print("my week 2 rounded prediction is", week2_pred)

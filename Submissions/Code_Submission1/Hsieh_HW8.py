@@ -18,8 +18,8 @@ def get_mean(days_of_flow):
     two_week_mean is an int or float
     """
 
-    mean = np.mean(data.tail(days_of_flow)['flow'])
-    return mean
+    mymean = np.mean(data.tail(days_of_flow)['flow'])
+    return mymean
 
 # %%
 # Set the file name and path to where you have stored the data
@@ -83,11 +83,11 @@ print('The slopes are:', np.round(model.coef_, 2))
 # Prediction for week 1 using my AR model. I used a for loop that would make a
 # line with the equation y = m1x1 + m2x2 ... m20x20 + b
 
-this_week_pred = model.intercept_
+this_week_ARpred = model.intercept_
 
 for f in range(1, 21):
-    this_week_pred = model.coef_[f-1] * test[f].tail(1) + this_week_pred
-print("this is the first week AR prediction:", np.int(this_week_pred.values))
+    this_week_ARpred = model.coef_[f-1] * test[f].tail(1) + this_week_ARpred
+print("this is the first week AR prediction:", np.int(this_week_ARpred.values))
 
 # Prediction for week 2 using my model. This code is interesting, as I had to
 # use my weekly flow value I predicted above and use it in my second
@@ -98,14 +98,14 @@ print("this is the first week AR prediction:", np.int(this_week_pred.values))
 # same equation as above y = m1x1 + m2x2 ... m20x20 + b using my newest
 # weekly flow and all other x values shifted by one week.
 
-next_week_pred = model.intercept_
+next_week_ARpred = model.intercept_
 
-next_week_pred = this_week_pred * model.coef_[0] + next_week_pred
+next_week_ARpred = this_week_ARpred * model.coef_[0] + next_week_ARpred
 
 for p in range(1, 20):
-    next_week_pred = model.coef_[p] * test[p].tail(1) + next_week_pred
+    next_week_ARpred = model.coef_[p] * test[p].tail(1) + next_week_ARpred
 
-print("this is the second week AR prediction:", np.int(next_week_pred))
+print("this is the second week AR prediction:", np.int(next_week_ARpred))
 
 # %%
 # Now after all that work with my model, let's ignore it.
@@ -114,14 +114,22 @@ print("this is the second week AR prediction:", np.int(next_week_pred))
 # The average mean (rounded down using "int" function) is my week 1 prediction,
 # and week 2 is 1 cfs less than week 1.
 
-week1_pred = get_mean(14)
-week1_pred_rounded = int(week1_pred)
-print("my week 1 rounded prediction is", week1_pred_rounded)
+week1_pred = int(get_mean(14))
+print("my actual week 1 prediction is", week1_pred)
 
-#I just assume week 2 will have a slightly lower mean than week one because of 
-# historical trends. This why my second week prediction has a -1. 
+# I'm assuming my week 2 prediction will be slightly higher based on the past two
+# weeks trend. Therefore I just added 1 cfs for week 2's prediction. 
 
-week2_pred = week1_pred_rounded - 1
-print("my week 2 rounded prediction is", week2_pred)
+week2_pred = week1_pred + 1
+print("my actual week 2 prediction is", week2_pred)
+
+# Here I am adding the 16 week prediction "code". These are really just blind
+# guesses based loosly on historical trends.
+
+seasonal_prediction = pd.Series([58, 45, 40, 51, 57, 56, 65, 70, 80, 90,
+110, 115, 700, 300, 400, 400], index= ["lt_week1", "lt_week2", "lt_week3", "lt_week4",
+"lt_week5", "lt_week6", "lt_week7", "lt_week8", "lt_week9", "lt_week10", 
+"lt_week11", "lt_week12" , "lt_week13", "lt_week14" , "lt_week15", "lt_week16"])
+print (seasonal_prediction)
 
 # %%

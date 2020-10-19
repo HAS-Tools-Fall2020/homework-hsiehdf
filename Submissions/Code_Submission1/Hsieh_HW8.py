@@ -2,14 +2,16 @@
 import os
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
+import datetime
 
 # %%
 # Here is my first function!
 
 
 def get_mean(days_of_flow):
-    """Fuction to get my mean from x amount of days ago
+    """Function to get my mean from x amount of days ago
 
     This function will give us the mean flows from the *tail* end of our data.
     We can ask it to give us last weeks mean (i.e., last 7 days) or however
@@ -108,11 +110,25 @@ for p in range(1, 20):
 print("this is the second week AR prediction:", np.int(next_week_ARpred))
 
 # %%
+
+# I am including one graph that shows clearly my training and test data range
+fig, ax = plt.subplots()
+ax.plot(test['flow'], '-c', label='test')
+ax.plot(train['flow'], color='gold', linestyle='-', label='training')
+ax.set(title="Observed Flow", xlabel="Date", ylabel="Weekly Avg Flow [cfs]",
+       yscale='log')
+ax.grid(True)
+ax.legend()
+
+# Saving the figure
+fig.set_size_inches(5, 3)
+fig.savefig("Range of Training and Test Flow.png")
+
+# %%
 # Now after all that work with my model, let's ignore it.
 # Please use this method to decide my actual predictions.
 # I am using my function from above to get means from the last 2 weeks.
-# The average mean (rounded down using "int" function) is my week 1 prediction,
-# and week 2 is 1 cfs less than week 1.
+# The average mean (rounded down using "int" function) is my week 1 prediction
 
 week1_pred = int(get_mean(14))
 print("my actual week 1 prediction is", week1_pred)
@@ -124,7 +140,7 @@ week2_pred = week1_pred + 1
 print("my actual week 2 prediction is", week2_pred)
 
 # Here I am adding the 16 week prediction "code". These are really just blind
-# guesses based loosly on historical trends.
+# guesses based loosly on historical trends and wishful thinking.
 
 seasonal_prediction = pd.Series([58, 45, 40, 51, 57, 56, 65, 70, 80, 90,
 110, 115, 700, 300, 400, 400], index= ["lt_week1", "lt_week2", "lt_week3", "lt_week4",

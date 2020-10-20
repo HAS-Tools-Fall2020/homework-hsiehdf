@@ -6,6 +6,19 @@ HAS Tools
 10/19
 - - -
 
+#### Grade 
+ - 6/6  Great  job!
+ - Readability: 3
+ - Style: 3 
+ - Code: 2
+
+ - You could have skipped it all but thanks for providing the summary. And congrats on being undefeated champion!
+ - You are right that is some pretty great looping!
+ - I made some suggestions for shortening series. 
+
+
+ __
+
 I won the previous weeks prediction, therefore, I am inclined to skip my markdown... however, I will add a little bit of information because I'm not 100% sure I should skip everything in this markdown since this code is graded.
 
 1. A brief summary of the AR model I built and why:

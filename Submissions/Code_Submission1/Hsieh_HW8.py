@@ -9,7 +9,7 @@ import datetime
 # %%
 # Here is my first function!
 
-
+# LC - Nice documentation
 def get_mean(days_of_flow):
     """Function to get my mean from x amount of days ago
 
@@ -61,6 +61,10 @@ for k in range(1, 21):
 # they didn't have lagged data to go with them. My test set is composed
 # of rows 1200 onward.
 
+# LC - you could set the 21 and 1200 values as variables 
+# also you can use a series to create your 1-20 values without typing them all out. 
+# list(range(20))+1
+
 train = flow_weekly[21:1200][['flow', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,
                              13, 14, 15, 16, 17, 18, 19, 20]]
 test = flow_weekly[1200:][['flow', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,
@@ -72,6 +76,9 @@ test = flow_weekly[1200:][['flow', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,
 # values. My y axis is the flow values.
 
 model = LinearRegression()
+
+# LC - see comment above on the series. 
+# This section would be good to put in a function. 
 x = train[[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
            19, 20]]
 y = train['flow'].values

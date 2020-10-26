@@ -6,7 +6,7 @@ HAS Tools
 10/5/2020
 - - -
 ### Grade
-3/3 - Nice work! It does seem like there is something weird happening with your model maybe we can get to the bottom of it with the code review this week. 
+3/3 - Nice work! It does seem like there is something weird happening with your model maybe we can get to the bottom of it with the code review this week.
 ___
 
 ## Summary of How I Made My Forecasts

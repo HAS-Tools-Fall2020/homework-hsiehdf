@@ -184,14 +184,17 @@ fig.savefig("Precipitation Plot.png")
 # Please use this method to decide my actual predictions.
 # I am using my function from above to get means from the last week.
 # The average mean (rounded down using "int" function) is my week 1 prediction
+# However, I am also adding an additional 16 cfs because the flow has been
+# increasing and looking at 2018-19 data average for the end of october was 
+# 97 and 161 cfs.
 
-week1_pred = int(get_mean(7))
+week1_pred = int(get_mean(7)) + 16
 print("my actual week 1 prediction is", week1_pred)
 
-# I'm assuming my week 2 prediction will be slightly higher based on the past two
-# weeks trend. Therefore I just added 1 cfs for week 2's prediction. 
+# I'm assuming my week 2 prediction will be slightly higher based past 
+# trends. Therefore I added 5 cfs for week 2's prediction. 
 
-week2_pred = week1_pred + 1
+week2_pred = week1_pred + 5
 print("my actual week 2 prediction is", week2_pred)
 
 # Here I am adding the 16 week prediction "code". These are really just blind

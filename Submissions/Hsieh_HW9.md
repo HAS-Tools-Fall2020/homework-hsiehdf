@@ -5,6 +5,13 @@ HAS Tools
 
 10/25 - 10/31
 - - -
+### Grade
+
+3/3 - Nice job!
+
+-- Also FYI I fixed your plot issue. The problem is that you can't have a space in your file name (or you need to use a \ to designate the space) I changed it to an '_' and it works. 
+
+___
 
 ## Summary of How I Made My Forecasts
 
@@ -30,4 +37,4 @@ I went to NOAA station mapper and located a stream gauge at the beginning of Ver
 
 Unsure why I can't put my image in here without dragging from my GUI. This doesn't work even though the file is in my assets folder?
 
-![](assets/Precipitation Plot.png)
+![](assets/Precipitation_Plot.png)

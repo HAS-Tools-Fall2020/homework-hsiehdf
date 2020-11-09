@@ -7,6 +7,7 @@ import geopandas as gpd
 import fiona
 from shapely.geometry import Point
 import contextily as ctx
+import descartes
 
 # %%
 #  Gauges II USGS stream gauge dataset:
@@ -36,9 +37,9 @@ gages.total_bounds
 # https://repository.arizona.edu/handle/10150/188734
 
 
-file = os.path.join('data-nongit', 'az_county.shp')
-fiona.listlayers(file)
-az_county= gpd.read_file(file, layer="AZ County")
+#file = os.path.join('az_county', 'az_county.shp')
+#fiona.listlayers(file)
+#az_county= gpd.read_file(file)
 
 # %% 
 # Now lets make a map!
@@ -107,7 +108,7 @@ plt.show()
 #x.set_title("NHD Waterbody")
 #plt.show()
 
-#checking another layer
+#checking another layer, waterways with features
 file = os.path.join('data-nongit', 'NHD_H_Arizona_State_GDB.gdb')
 fiona.listlayers(file)
 flowline = gpd.read_file(file, layer="NHDLine")
@@ -127,7 +128,7 @@ NHDLine.plot(ax=ax)
 ax.set_title("NHDLine")
 plt.show()
 
-# Looks like the rivers!
+# Looks like the rivers! natureal waters
 file = os.path.join('data-nongit', 'NHD_H_Arizona_State_GDB.gdb')
 NHDArea = gpd.read_file(file, layer="NHDArea")
 fig, ax = plt.subplots(figsize=(5, 5))
@@ -136,7 +137,16 @@ ax.set_title("NHD Area")
 ax.legend()
 plt.show()
 
+#Lets try even more layers. This one is major rivers, main stem, primary
+#and secondary stem. Works!
+file = os.path.join('data-nongit', 'CO4.shp')
+major_rivers = gpd.read_file(file)
+fig, ax = plt.subplots(figsize=(5, 5))
+major_rivers.plot(ax=ax)
+ax.set(ylim=[3700000, 3900000], xlim=[300000, 500000])
+plt.show()
 
+major_rivers.crs
 
 # %%
 # Add some points

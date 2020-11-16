@@ -48,8 +48,8 @@ start_train_date = '2009-10-01'
 end_train_date = '2009-11-30'
 
 # Forecasting period
-start_for_date = '2020-11-08'
-end_for_date = '2020-11-21'
+start_for_date = '2020-11-15'
+end_for_date = '2020-11-29'
 
 # Used parameters for the model
 # Number of shifts

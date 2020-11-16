@@ -232,3 +232,5 @@ def prec_temp_data(end_date):
     data_Meso_W = data_Meso.resample('W-SUN').mean().round(2)
 
     return data_Meso, data_Meso_D, data_Meso_W
+
+# %%

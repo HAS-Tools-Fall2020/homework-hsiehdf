@@ -8,7 +8,7 @@ HAS Tools
 
 I've given up entirely on my Linear Regression model. I am now looking into a crystal ball, astrological signs, and tea leaves.
 
-Okay not really. I'm still looking back at the last weeks averages and now I'm just using that same percentage increase to predict next weeks flow. However I also looked at my new found pressure data and it looks like the pressure is stabilizing, so I didn't increase the flow that much. 
+Okay not really. I'm still looking back at the last weeks averages and now I'm just using that same percentage increase to predict next weeks flow. However I also looked at my new found pressure data and it looks like the pressure is stabilizing, so I didn't increase the flow that much.
 
 ## Assignment Questions
 
@@ -25,7 +25,8 @@ Okay not really. I'm still looking back at the last weeks averages and now I'm j
 - The data came from the Physical Science Laboratory Site. I downloaded NCEP Reanalysis Daily Averages and Pressure.
 
 4) What was your approach to extracting and aggregating it into something useful to you?
--I initially tried to add my pressure data into my linear regression model. This of course led to an answer that was useless because the units of flow (cfs) and pressure (pascals) do not match. When I added pressure into the linear regression model I was getting a prediction of -600+ cfs. This makes sense because the pressure readings were all 80,000+ pascals, which skewed the data.
+
+- I initially tried to add my pressure data into my linear regression model. This of course led to an answer that was useless because the units of flow (cfs) and pressure (pascals) do not match. When I added pressure into the linear regression model I was getting a prediction of -600+ cfs. This makes sense because the pressure readings were all 80,000+ pascals, which skewed the data.
 Ultimately I chose to look at pressure from the last 25 to 100 days. The last 100 days shows me what the pressure generally averages at. Then the last 25 days can show me the current trend.
 
 5) A plot of the dataset you added. This can be a timeseries, map, histogram or any other plot that you think is a good summary of what you added.

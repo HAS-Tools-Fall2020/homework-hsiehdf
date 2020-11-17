@@ -3,6 +3,11 @@ Diana Hsieh
 
 HAS Tools
 - - -
+__
+## Grade
+3/3 - Nice work!  The units part on the regression models is a little tricky really we should be paying much more attention to normalization when we add all these things together.
+
+__
 
 # Summary of How I Made My Forecasts
 

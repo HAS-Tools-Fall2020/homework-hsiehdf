@@ -63,12 +63,14 @@ for k in range(1, 21):
 # also you can use a series to create your 1-20 values without typing them all out. 
 # list(range(20))+1
 shifts = list(range(1,21))
-week_training_start = 21
-week_training_end = 1200
+shifts_and_flow = ["flow"] + shifts
 
-train = flow_weekly[21:1200][shifts]
-test = flow_weekly[1200:][['flow', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,
-                           13, 14, 15, 16, 17, 18, 19, 20]]
+
+training_start = 21
+training_end = 1200
+
+train = flow_weekly[training_start:training_end][shifts_and_flow]
+test = flow_weekly[training_end:][shifts_and_flow]
 
 
 # %%
@@ -79,8 +81,7 @@ model = LinearRegression()
 
 # LC - see comment above on the series. 
 # This section would be good to put in a function. 
-x = train[[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
-           19, 20]]
+x = train[shifts]
 y = train['flow'].values
 model.fit(x, y)
 r_sq = model.score(x, y)

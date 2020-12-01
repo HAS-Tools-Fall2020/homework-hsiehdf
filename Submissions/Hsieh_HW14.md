@@ -6,6 +6,8 @@ HAS Tools
 11/30/29
 - - -
 
+## Grade
+3/3 - nice work.
 
 
 1) What is the paper or project you picked? Include a title, a link the paper and a 1-2 sentence summary of what its about.

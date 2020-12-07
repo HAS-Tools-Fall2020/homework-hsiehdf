@@ -1,0 +1,29 @@
+The coefficient of determination is: 0.4
+The Y intercept is: 122.62
+The slopes are: [ 0.43  0.1  -0.    0.13  0.1   0.19 -0.12 -0.09 -0.02 -0.05 -0.03 -0.
+  0.03  0.03  0.01  0.01 -0.01 -0.02 -0.    0.  ]
+this is the first week AR prediction: 225
+this is the second week AR prediction: 267
+this is the first week AR prediction: 225
+this is the second week AR prediction: 267
+my actual week 1 prediction is 158
+my actual week 2 prediction is 159
+lt_week1      58
+lt_week2      45
+lt_week3      40
+lt_week4      51
+lt_week5      57
+lt_week6      56
+lt_week7      65
+lt_week8      70
+lt_week9      80
+lt_week10     90
+lt_week11    110
+lt_week12    115
+lt_week13    700
+lt_week14    300
+lt_week15    400
+lt_week16    400
+dtype: int64
+Your group tmeixner has been charged 0:00:06 (0:00:06 X 1 cpus).
+You previously had 35999:46:40.  You now have 35999:46:34 of standard_time remaining

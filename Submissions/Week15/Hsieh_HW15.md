@@ -5,6 +5,8 @@ HAS Tools
 
 12/7/2020
 - - -
+### Grade
+3/3 - Free pass accepted! Great job this semester I'm so happy to hear you found it useful :) 
 
 I'm using my floater freebee markdown pass for winning the first half of the class competition.
 
